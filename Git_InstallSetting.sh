@@ -36,5 +36,7 @@ function Configuration()
 	fi
 
 }
-sudo apt-get install git -y
+sudo apt-get install git -y 
+test ${?} != 0 && \
+	echo -e "[\033[31m$(date +"%Y-%m-%d %T") Error\033[0m]  程序安装失败!"
 Configuration
