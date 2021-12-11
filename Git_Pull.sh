@@ -24,8 +24,8 @@ function Main()
 {
 	#=======================================================
 	#参数更改
-	repository=git@github.com:335134701/Git.git
-	localDir=$(pwd)
+	localDir=$(pwd)	
+	repository=git@github.com:335134701/${localDir##*/}.git
 	localDirName=main
 	#=======================================================
 	git --version >/dev/null 2>&1
