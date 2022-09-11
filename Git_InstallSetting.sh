@@ -5,7 +5,7 @@ function Configuration()
 	#========================================
 	#需要更改的参数
 	#用户名
-	username=zc
+	username=tim
 	#邮箱
 	useremail=335134701@qq.com
 	#========================================
@@ -16,12 +16,12 @@ function Configuration()
 	echo -e "[\033[32m$(date +"%Y-%m-%d %T") Info\033[0m]  ""Enter file in which to save the key (/home/zc/.ssh/id_rsa):(按下回车键)"
 	echo -e "[\033[32m$(date +"%Y-%m-%d %T") Info\033[0m]  ""Enter passphrase (empty for no passphrase):(输入github网站个人账户的密码)"
 	echo -e "[\033[32m$(date +"%Y-%m-%d %T") Info\033[0m]  ""Enter same passphrase again: (再输一次github网站个人账户的密码)"
-	ssh-keygen -t rsa -C ${useremail}
+	ssh-keygen -t ed25519 -C ${useremail}
 	echo -e "[\033[32m$(date +"%Y-%m-%d %T") Info\033[0m]  ""1.复制下面的哈希值;"
 	echo -e "[\033[32m$(date +"%Y-%m-%d %T") Info\033[0m]  ""2.打开github网站并登录;" 
 	echo -e "[\033[32m$(date +"%Y-%m-%d %T") Info\033[0m]  ""3.点击个人头像->Settings->SSH and GPG keys->New SSH key;" 
 	echo -e "[\033[32m$(date +"%Y-%m-%d %T") Info\033[0m]  ""4.Title可以随便写，将复制的内容填入Key中."
-	cat ~/.ssh/id_rsa.pub
+	cat ~/.ssh/id_ed25519.pub
 	read -p "请确认Github网站操作是否完成(Y/N) ? " ischoose
 	if [ ${ischoose} = "Y" -o ${ischoose} = "y" ];then
 		ssh -T git@github.com
